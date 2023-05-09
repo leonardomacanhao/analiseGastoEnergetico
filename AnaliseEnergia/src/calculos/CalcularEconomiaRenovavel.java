@@ -2,8 +2,17 @@ package calculos;
 
 public class CalcularEconomiaRenovavel {
 
-	 // Calcula a economia feita através da geração de energia renovável
-    public static double calcularEconomiaRenovavel(double geracaoRenovavel, double tarifa) {
+	 
+    public static double calcularEnergiaInjetadaPonta(double geracaoRenovavel, double tarifa) {
         return geracaoRenovavel * tarifa;
+    }
+    
+    
+    public static double calcularEnergiaInjetadaForaPonta (double geracaoRenovavel, double tarifa) {
+    	return geracaoRenovavel * tarifa;
+    }
+    
+    public static double calcularEnergiaInjetadaMPT (double geracaoRenovavel, double tarifa) {
+    	return geracaoRenovavel * tarifa;
     }
 }

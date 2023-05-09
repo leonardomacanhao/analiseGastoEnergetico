@@ -5,8 +5,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		// Array de consumo de energia em kWh
-	    double[] consumoEnergia = { 4434.57 , 14957.88 , 130.20 , 8.8};
+	    double[] consumoEnergia = { 4434.57};
 
+	    	/*Instanciação dos objetos
+	    	 * passando os valores de forma fixa pra validar a funcionalidade dos métodos
+	    	 * aguardando avaliar como sao taxadas as contas para continuar  as classes
+	    	 * */
 	    
 	        // Calcula o consumo médio de energia
 	    	CalcularMedia calcularMedia = new CalcularMedia();
@@ -15,13 +19,13 @@ public class Main {
 
 	        // Calcula o custo médio de energia
 	        CalcularCusto calcularCusto = new CalcularCusto();
-	        double custoMedio = CalcularCusto.calcularCusto(consumoEnergia, 3.454840);
+	        double custoMedio = CalcularCusto.calcularCustoPonta(consumoEnergia, 3.454840);
 	        System.out.println("Custo médio de energia: R$ " + custoMedio);
 
 	        // Calcula a economia feita através da geração de energia renovável
 	        CalcularEconomiaRenovavel calcularEconomiaRenovavel = new CalcularEconomiaRenovavel();
 	        double geracaoRenovavel = 4434.57 + 9960.51 + 4997.37;
-	        double economiaRenovavel = CalcularEconomiaRenovavel.calcularEconomiaRenovavel(geracaoRenovavel, 3.454840);
+	        double economiaRenovavel = CalcularEconomiaRenovavel.calcularEnergiaInjetadaPonta(geracaoRenovavel, 3.454840);
 	        System.out.println("Economia feita através da geração de energia renovável: R$ " + economiaRenovavel);
 
 	        // Projeção de gastos futuros
