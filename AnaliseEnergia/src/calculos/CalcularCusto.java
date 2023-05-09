@@ -3,7 +3,7 @@ package calculos;
 public class CalcularCusto {
 
 	 
-    public static double calcularCustoPonta(double[] valores, double tarifa) {
+    public double calcularCustoPonta(double[] valores, double tarifa) {
         double soma = 0;
         for (double valor : valores) {
             soma += valor * tarifa;
@@ -12,7 +12,7 @@ public class CalcularCusto {
     }
     
     
-    public static double calcularCustoForaPonta (double[] valores, double tarifa) {
+    public double calcularCustoForaPonta (double[] valores, double tarifa) {
     	 
     	double soma = 0;
          for (double valor : valores) {
@@ -21,7 +21,7 @@ public class CalcularCusto {
          return soma / valores.length;
     }
     
-    public static double calcularCustoEnergiaExcedente(double[] valores, double tarifa) {
+    public double calcularCustoEnergiaExcedente(double[] valores, double tarifa) {
    	 
    	double soma = 0;
         for (double valor : valores) {
@@ -30,7 +30,7 @@ public class CalcularCusto {
         return soma / valores.length;
    }
     
-    public static double demandaDePotenciaMedidaForaPonta(double[] valores, double tarifa) {
+    public double demandaDePotenciaMedidaForaPonta(double[] valores, double tarifa) {
       	 
        	double soma = 0;
             for (double valor : valores) {
@@ -39,7 +39,7 @@ public class CalcularCusto {
             return soma / valores.length;
        }
     
-    public static double demandaDePotenciaNaoConsumida(double[] valores, double tarifa) {
+    public double demandaDePotenciaNaoConsumida(double[] valores, double tarifa) {
      	 
        	double soma = 0;
             for (double valor : valores) {
@@ -47,4 +47,12 @@ public class CalcularCusto {
             }
             return soma / valores.length;
        }
+    
+    public double custoTotalConsumido (double ponta ,double foraPonta , double excedente, double potMedForaPonta , double naoConsumida ) {
+    	
+    	
+    	double soma = ponta + foraPonta + excedente + potMedForaPonta + naoConsumida ;
+    	
+    	return soma;
+    }
 }
