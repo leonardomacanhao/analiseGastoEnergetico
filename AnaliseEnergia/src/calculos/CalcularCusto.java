@@ -48,11 +48,18 @@ public class CalcularCusto {
             return soma / valores.length;
        }
     
-    public double custoTotalConsumido (double ponta ,double foraPonta , double excedente, double potMedForaPonta , double naoConsumida ) {
+    public double custoTotalConsumidoSemICMS (double ponta ,double foraPonta , double excedente, double potMedForaPonta , double naoConsumida ) {
     	
     	
     	double soma = ponta + foraPonta + excedente + potMedForaPonta + naoConsumida ;
     	
     	return soma;
+    }
+    
+    public double custoTotalConsumidoComICMS(double custo) {
+    	double total = custo + ((custo * 17) / 100);
+    	
+    	return total;
+    	
     }
 }

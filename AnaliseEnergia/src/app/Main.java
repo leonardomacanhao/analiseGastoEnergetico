@@ -12,15 +12,15 @@ public class Main {
 	    	double[] energiaMedidaForaPonta = { 130.20};
 	    	double[] potenciaNaoConsumida = { 8.80};
 
-	    	/*Instanciação dos objetos
-	    	 * passando os valores de forma fixa pra validar a funcionalidade dos métodos
-	    	 * aguardando avaliar como sao taxadas as contas para continuar  as classes
-	    	 * */
+	    	//variavel temporaria para teste
+	    	double teste = 4434.57 + 14957.88 + 3.57 + 130.20  + 8.80;
+	    	double[] consumoEnergia = {teste};
 	    
 	        // Calcula o consumo total
-	    	//CalcularMedia calcularMedia = new CalcularMedia();
-	    	//double mediaConsumo = CalcularMedia.calcularMedia(consumoEnergia);
-	        //System.out.println("Média de consumo de energia: " + mediaConsumo + " kWh");
+	    	CalcularMedia calcularMedia = new CalcularMedia();
+	    	double mediaConsumo = calcularMedia.calcularMedia(consumoEnergia);
+	        System.out.printf("Média de consumo de energia de período: %.2f" , mediaConsumo);
+	        System.out.println(" kWh");
 
 	        // Calcula o custo médio de energia
 	        CalcularCusto custoPonta = new CalcularCusto();
@@ -38,9 +38,11 @@ public class Main {
 	        
 	        //calculo do valor total consumido, chamando a o metodo custoTotalConsumido da classe Calcular Custo
 	        CalcularCusto calcularCustoTotal = new CalcularCusto();
-	        double valorTotalConsumido = calcularCustoTotal.custoTotalConsumido(c1 , c2 , c3 , c4 , c5);
+	        double valorTotalConsumidoSemICMS = calcularCustoTotal.custoTotalConsumidoSemICMS(c1 , c2 , c3 , c4 , c5);
+	        double valorTotalConsumidoComICMS = calcularCustoTotal.custoTotalConsumidoComICMS(valorTotalConsumidoSemICMS);
 	        
-	        System.out.printf("Consumo total: R$ %.2f" , valorTotalConsumido);
+	        System.out.printf("Consumo total do período sem ICMS: R$ %.2f\n" , valorTotalConsumidoSemICMS);
+	        System.out.printf("Consumo total do período com ICMS: R$ %.2f" , valorTotalConsumidoComICMS);
 
 	        /*
 	        // Calcula a economia feita através da geração de energia renovável
